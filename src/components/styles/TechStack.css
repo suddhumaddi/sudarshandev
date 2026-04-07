@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════════
+   TECH STACK — 3D Balls + Infinite Marquee
+═══════════════════════════════════════════════ */
+
+.techstack {
+  padding: 120px 0 120px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  background-color: var(--backgroundColor, #0b080c);
+  text-align: center;
+}
+
+/* ─── Title ─── */
+
+.techstack-title {
+  font-size: clamp(40px, 6vw, 70px);
+  font-weight: 500;
+  margin: 0 0 120px;
+  position: relative;
+  z-index: 20;
+}
+
+.techstack-title span {
+  color: var(--accentColor);
+}
+
+/* ─── 3D Canvas ─── */
+
+.techstack-canvas-wrapper {
+  width: 100%;
+  height: 420px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.techstack-canvas-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* glow behind spheres */
+
+.techstack-canvas-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(127, 64, 255, 0.2) 0%,
+      transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* ─── Marquee ─── */
+
+.techstack-marquee-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* fade edges */
+
+.techstack-marquee-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.techstack-marquee-fade--left {
+  left: 0;
+  background: linear-gradient(90deg,
+      var(--backgroundColor, #0b080c),
+      transparent);
+}
+
+.techstack-marquee-fade--right {
+  right: 0;
+  background: linear-gradient(-90deg,
+      var(--backgroundColor, #0b080c),
+      transparent);
+}
+
+/* marquee container */
+
+.techstack-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* scrolling track */
+
+.techstack-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: techMarquee 28s linear infinite;
+}
+
+.techstack-marquee:hover .techstack-marquee-track {
+  animation-play-state: paused;
+}
+
+/* marquee animation */
+
+@keyframes techMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ─── Tech Cards ─── */
+
+.techstack-pill-float {
+  animation: floatY 4s ease-in-out infinite;
+  display: flex;
+}
+
+.techstack-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(127, 64, 255, 0.15);
+  border-radius: 16px;
+
+  padding: 20px 24px;
+  min-width: 140px;
+
+  text-align: center;
+  transition: all .3s ease;
+
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.techstack-pill:hover {
+  background: rgba(127, 64, 255, 0.1);
+  border-color: var(--accentColor);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 15px rgba(127, 64, 255, 0.4);
+}
+
+/* icon */
+
+.techstack-pill-icon {
+  font-size: 32px;
+  line-height: 1;
+  display: block;
+}
+
+/* category label */
+
+.techstack-pill-category {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #b084ff;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+/* name */
+
+.techstack-pill-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ─── Responsive ─── */
+
+@media only screen and (max-width: 550px) {
+  .techstack {
+    padding: 80px 0 100px;
+  }
+
+  .techstack-canvas-wrapper {
+    height: 300px;
+  }
+
+  .techstack-marquee-fade {
+    width: 50px;
+  }
+}

@@ -1,0 +1,109 @@
+.leadership-section {
+    margin: auto;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.leadership-header h2 {
+    font-size: 70px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.1;
+    color: white;
+}
+
+.leadership-header h2 span {
+    color: var(--accentColor, #7800ff);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.leadership-card {
+    position: relative;
+    background: var(--backgroundColor, #0b080c);
+    border: 1px solid rgba(127, 64, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leadership-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.role-badge {
+    display: inline-flex;
+    background: rgba(127, 64, 255, 0.1);
+    color: var(--accentColor, #7800ff);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
+}
+
+.leadership-card p {
+    color: #adacac;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.hover-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: var(--accentColor, #7800ff);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.leadership-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(127, 64, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(127, 64, 255, 0.1);
+}
+
+.leadership-card:hover .hover-glow {
+    opacity: 0.15;
+}
+
+@media only screen and (max-width: 1025px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .leadership-header h2 {
+        font-size: 50px;
+    }
+}

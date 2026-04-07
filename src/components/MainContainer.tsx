@@ -9,6 +9,9 @@ import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import setSplitText from "./utils/splitText";
+import ScrollProgress from "./ScrollProgress";
+import Hackathons from "./Hackathons";
+import Leadership from "./Leadership";
 
 const TechStack = lazy(() => import("./TechStack"));
 
@@ -31,6 +34,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
+      <ScrollProgress />
       <Cursor />
       <Navbar />
       <SocialIcons />
@@ -43,6 +47,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <WhatIDo />
             <Career />
             <Work />
+            <Hackathons />
+            <Leadership />
             {isDesktopView && (
               <Suspense fallback={<div>Loading....</div>}>
                 <TechStack />

@@ -15,43 +15,37 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Data Analyst Intern</h4>
+                <h5>Infryntrek Systemes</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>Sep 2025 - Dec 2025</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Designed analytical dashboards and pipelines, extracting actionable insights from complex datasets to support business decision-making.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Software Developer Engineer Intern</h4>
+                <h5>Bluestock Fintech</h5>
               </div>
-              <h3>20XX</h3>
+              <h3>Dec 2025 - Jan 2026</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Built financial technology features and data processing systems in a fast-paced fintech product environment.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Machine Learning Engineer Intern</h4>
+                <h5>Cognifyz Technologies</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>Jan 2026 - Feb 2026</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Engineered and deployed machine learning pipelines, trained models for real-world classification and regression tasks, and optimized model performance.
             </p>
           </div>
         </div>
